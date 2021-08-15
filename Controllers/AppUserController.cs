@@ -18,17 +18,18 @@ namespace API.Controllers
         [HttpGet("GetUsers")]
         public List<AppUser> GetUsers()
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-GMOA06LL\SQLEXPRESS;Initial Catalog=ONE_ProjectDatabase;Trusted_Connection=True");
-            SqlDataAdapter sqlAda = new SqlDataAdapter("Select * from AppUsers",connection);
-            DataTable data = new DataTable();
-            sqlAda.Fill(data);
+            using (SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-GMOA06LL\SQLEXPRESS;Initial Catalog=ONE_ProjectDatabase;Trusted_Connection=True")){
+                SqlDataAdapter sqlAda = new SqlDataAdapter("Select * from AppUsers",connection);
+                DataTable data = new DataTable();
+                sqlAda.Fill(data);
 
-            List<AppUser> list = new List<AppUser>();
-            list = (from DataRow dr in data.Rows 
-                    select new AppUser(Convert.ToInt32(dr["Id"]), dr["UserName"].ToString())
-                    ).ToList();
+                List<AppUser> list = new List<AppUser>();
+                list = (from DataRow dr in data.Rows 
+                        select new AppUser(Convert.ToInt32(dr["Id"]), dr["UserName"].ToString())
+                        ).ToList();
+                return list;
+            }
             
-            return list;
         }
     }
 }
