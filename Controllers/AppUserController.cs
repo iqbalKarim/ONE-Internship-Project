@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
@@ -18,7 +17,8 @@ namespace API.Controllers
         [HttpGet("GetUsers")]
         public List<AppUser> GetUsers()
         {
-            using (SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-GMOA06LL\SQLEXPRESS;Initial Catalog=ONE_ProjectDatabase;Trusted_Connection=True")){
+            using (SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-GMOA06LL\SQLEXPRESS;Initial Catalog=ONE_ProjectDatabase;Trusted_Connection=True"))
+            {
                 SqlDataAdapter sqlAda = new SqlDataAdapter("Select * from AppUsers",connection);
                 DataTable data = new DataTable();
                 sqlAda.Fill(data);
@@ -29,7 +29,6 @@ namespace API.Controllers
                         ).ToList();
                 return list;
             }
-            
         }
     }
 }
