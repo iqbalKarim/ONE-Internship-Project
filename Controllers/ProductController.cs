@@ -28,6 +28,22 @@ namespace API.Controllers
                 return products;
             }
         }
+
+        [HttpGet("{Category}")]
+        public List<Product> GetProductsFromCategory(string Category){
+            using (SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-GMOA06LL\SQLEXPRESS;Initial Catalog=ONE_ProjectDatabase;Trusted_Connection=True"))
+            {
+                SqlDataAdapter sqlAda = new SqlDataAdapter("select * from products where CategoryName = '" + Category + "'", connection);
+                DataTable data = new DataTable();
+                sqlAda.Fill(data);
+
+                List<Product> products = new List<Product>();
+                products = (from DataRow row in data.Rows
+                            select new Product(row["ProductName"].ToString(), row["CategoryName"].ToString(), Convert.ToDouble(row["Price"]))).ToList<Product>();
+                return products;
+            }
+        }
+
     }
 }
 
