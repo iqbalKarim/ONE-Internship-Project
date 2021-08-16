@@ -13,7 +13,7 @@ namespace API.Controllers
         public ProductController(){
         }
 
-        [HttpGet("GetProducts")]
+        [HttpGet("allProducts")]
         public List<Product> GetProducts(){
             
             using (SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-GMOA06LL\SQLEXPRESS;Initial Catalog=ONE_ProjectDatabase;Trusted_Connection=True"))
@@ -29,7 +29,7 @@ namespace API.Controllers
             }
         }
 
-        [HttpGet("{Category}")]
+        [HttpGet("{category}")]
         public List<Product> GetProductsFromCategory(string Category){
             using (SqlConnection connection = new SqlConnection(@"Data Source=LAPTOP-GMOA06LL\SQLEXPRESS;Initial Catalog=ONE_ProjectDatabase;Trusted_Connection=True"))
             {
