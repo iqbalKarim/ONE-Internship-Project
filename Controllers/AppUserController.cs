@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using API.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 
@@ -15,6 +16,7 @@ namespace API.Controllers
         {
         }
 
+        [Authorize]
         [HttpGet("GetUsers")]
         public List<AppUser> GetUsers()
         {

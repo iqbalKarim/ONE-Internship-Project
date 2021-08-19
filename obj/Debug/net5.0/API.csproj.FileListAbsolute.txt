@@ -30,7 +30,6 @@ D:\dotnetProjects\oneInternshipExercise\API\bin\Debug\net5.0\Microsoft.IdentityM
 D:\dotnetProjects\oneInternshipExercise\API\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 D:\dotnetProjects\oneInternshipExercise\API\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
 D:\dotnetProjects\oneInternshipExercise\API\bin\Debug\net5.0\Microsoft.OpenApi.dll
-D:\dotnetProjects\oneInternshipExercise\API\bin\Debug\net5.0\Newtonsoft.Json.dll
 D:\dotnetProjects\oneInternshipExercise\API\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\dotnetProjects\oneInternshipExercise\API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\dotnetProjects\oneInternshipExercise\API\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -68,3 +67,4 @@ D:\dotnetProjects\oneInternshipExercise\API\obj\Debug\net5.0\API.dll
 D:\dotnetProjects\oneInternshipExercise\API\obj\Debug\net5.0\ref\API.dll
 D:\dotnetProjects\oneInternshipExercise\API\obj\Debug\net5.0\API.pdb
 D:\dotnetProjects\oneInternshipExercise\API\obj\Debug\net5.0\API.genruntimeconfig.cache
+D:\dotnetProjects\oneInternshipExercise\API\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
