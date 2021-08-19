@@ -3,11 +3,6 @@ namespace API.Entities
     public class AppUser
     {
         private int id;
-        private string username;
-        public AppUser(int Id, string UserName){
-            this.Id = Id;
-            this.UserName = UserName;
-        }
         public int Id { 
             get{
                 return id;
@@ -16,6 +11,8 @@ namespace API.Entities
                 id = value;
             } 
         }
+        
+        private string username;
         public string UserName { 
             get{
                 return username;
@@ -23,7 +20,18 @@ namespace API.Entities
                 username = value;
             } 
         }
-        // public string PasswordHash { get; set; }
-        // public string PasswordSalt { get; set; }
+        
+        private byte[] passwordHash;
+        public byte[] PasswordHash
+        {
+            get { return passwordHash; }
+            set { passwordHash = value; }
+        }        
+        public AppUser(){}
+        public AppUser(int Id, string UserName){
+            this.Id = Id;
+            this.UserName = UserName;
+        }
+
     }
 }

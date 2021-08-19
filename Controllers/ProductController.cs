@@ -24,7 +24,7 @@ namespace API.Controllers
 
                 List<Product> products = new List<Product>();
                 products = (from DataRow row in data.Rows
-                            select new Product(row["ProductName"].ToString(), row["CategoryName"].ToString(), Convert.ToDouble(row["Price"]))).ToList<Product>();
+                            select new Product(Convert.ToInt32(row["Id"]),row["ProductName"].ToString(), row["CategoryName"].ToString(), Convert.ToDouble(row["Price"]))).ToList<Product>();
                 return products;
             }
         }
@@ -39,7 +39,7 @@ namespace API.Controllers
 
                 List<Product> products = new List<Product>();
                 products = (from DataRow row in data.Rows
-                            select new Product(row["ProductName"].ToString(), row["CategoryName"].ToString(), Convert.ToDouble(row["Price"]))).ToList<Product>();
+                            select new Product(Convert.ToInt32(row["Id"]), row["ProductName"].ToString(), row["CategoryName"].ToString(), Convert.ToDouble(row["Price"]))).ToList<Product>();
                 return products;
             }
         }
